@@ -11,7 +11,7 @@ Other alternatives for you to evaluate:
 - [`query-overpass`](https://github.com/perliedman/query-overpass) and a fork [`@sriharithalla/query-overpass`](https://github.com/SrihariThalla/query-overpass)
 - [`idris-overpass`](https://github.com/idris-maps/idris-overpass) and [`idris-overpass-browser`](https://github.com/idris-maps/idris-overpass-browser)
 
-[![npm version](https://img.shields.io/npm/v/query-overpass.svg)](https://www.npmjs.com/package/query-overpass)
+[![npm version](https://img.shields.io/npm/v/@derhuerst/query-overpass.svg)](https://www.npmjs.com/package/@derhuerst/query-overpass)
 [![build status](https://img.shields.io/travis/derhuerst/query-overpass.svg)](https://travis-ci.org/derhuerst/query-overpass)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/query-overpass.svg)
 [![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
