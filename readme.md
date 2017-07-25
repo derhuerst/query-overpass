@@ -1,5 +1,7 @@
 # query-overpass
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/derhuerst/query-overpass.svg)](https://greenkeeper.io/)
+
 **Query the [OpenStreetMap](https://www.openstreetmap.org/) [Overpass](https://overpass-api.de) API.** Yet another implementation, because it
 
 - is isomorphic (works in the browser)
