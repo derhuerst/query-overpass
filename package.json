@@ -24,7 +24,7 @@
 	"dependencies": {
 		"fetch-ponyfill": "^4.1.0",
 		"p-retry": "^1.0.0",
-		"pinkie-promise": "^2.0.1",
+		"pinkie-promise": ,
 		"query-string": "^5.0.0"
 	},
 	"devDependencies": {
