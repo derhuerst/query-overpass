@@ -22,7 +22,7 @@
 		"node": ">=6"
 	},
 	"dependencies": {
-		"fetch-ponyfill": "^4.1.0",
+		"fetch-ponyfill": "^5.0.0",
 		"p-retry": "^1.0.0",
 		"pinkie-promise": "^2.0.1",
 		"query-string": "^5.0.0"
