@@ -25,7 +25,7 @@
 		"fetch-ponyfill": "^6.0.0",
 		"p-retry": "^1.0.0",
 		"pinkie-promise": "^2.0.1",
-		"query-string": "^5.0.0"
+		"query-string": "^6.0.0"
 	},
 	"devDependencies": {
 		"tap-min": "^1.2.1",
