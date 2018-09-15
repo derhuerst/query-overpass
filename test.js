@@ -9,10 +9,11 @@ const west = 13.35
 const north = 52.5
 const east = 13.4
 const bbox = [south, west, north, east].join(',')
-const query = `\
-[out:json][timeout:25];
-node["railway"="subway_entrance"](${bbox});
-out body;`
+const query = `
+	[out:json][timeout:25];
+	node["railway"="subway_entrance"](${bbox});
+	out body;
+`
 
 test('queryOverpass', (t) => {
 	queryOverpass(query)

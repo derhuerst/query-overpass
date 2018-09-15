@@ -1,13 +1,14 @@
 'use strict'
 
 const retry = require('p-retry')
-const {fetch} = require('fetch-ponyfill')({Promise: require('pinkie-promise')})
+const Promise = require('pinkie-promise')
+const {fetch} = require('fetch-ponyfill')({Promise})
 const {stringify} = require('query-string')
 
 const endpoint = 'https://overpass-api.de/api/interpreter'
 
 const queryOverpass = (query) => {
-	return retry(() => {
+	const attempt = () => {
 		return fetch(endpoint + '?' + stringify({data: query}), {
 			// todo: decide on this
 			// yields isomorphic code, but slower due to preflight request?
@@ -32,7 +33,9 @@ const queryOverpass = (query) => {
 			}
 			return data.elements
 		})
-	}, {minTimeout: 500})
+	}
+
+	return retry(attempt, {minTimeout: 500})
 }
 
 module.exports = queryOverpass

@@ -31,10 +31,11 @@ Pass in a string of [Overpass QL](http://wiki.openstreetmap.org/wiki/Overpass_AP
 ```js
 const queryOverpass = require('query-overpass')
 
-queryOverpass(`\
-[out:json][timeout:25];
-node(3378340880);
-out body;`)
+queryOverpass(`
+	[out:json][timeout:25];
+	node(3378340880);
+	out body;
+`)
 .then(console.log)
 .catch(console.error)
 ```
