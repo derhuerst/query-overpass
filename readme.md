@@ -30,7 +30,7 @@ npm install @derhuerst/query-overpass
 Pass in a string of [Overpass QL](http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL). Returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/promise) that will resolve with an array of elements.
 
 ```js
-const queryOverpass = require('query-overpass')
+const queryOverpass = require('@derhuerst/query-overpass')
 
 queryOverpass(`
 	[out:json][timeout:25];
