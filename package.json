@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"fetch-ponyfill": "^6.0.0",
-		"p-retry": "^3.0.0",
+		"p-retry": "^4.0.0",
 		"pinkie-promise": "^2.0.1",
 		"query-string": "^6.0.0"
 	},
