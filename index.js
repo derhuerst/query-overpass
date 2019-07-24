@@ -8,7 +8,7 @@ const {stringify} = require('query-string')
 const defaults = {
 	fetchMode: null,
 	endpoint: 'https://overpass-api.de/api/interpreter',
-	retryOpts: {minTimeout: 500}
+	retryOpts: {minTimeout: 500, retries: 3}
 }
 
 const queryOverpass = (query, opt = {}) => {
