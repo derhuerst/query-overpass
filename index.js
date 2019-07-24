@@ -7,7 +7,8 @@ const {stringify} = require('query-string')
 
 const defaults = {
 	fetchMode: null,
-	endpoint: 'https://overpass-api.de/api/interpreter'
+	endpoint: 'https://overpass-api.de/api/interpreter',
+	retryOpts: {minTimeout: 500}
 }
 
 const queryOverpass = (query, opt = {}) => {
@@ -44,7 +45,7 @@ const queryOverpass = (query, opt = {}) => {
 		})
 	}
 
-	return retry(attempt, {minTimeout: 500})
+	return retry(attempt, opt.retryOpts)
 }
 
 module.exports = queryOverpass

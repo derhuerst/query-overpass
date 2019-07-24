@@ -39,6 +39,9 @@ test('queryOverpass', (t) => {
 const UNREACHABLE = 'http://127.0.0.1:1'
 test('custom endpoint fails', (t) => {
 	t.plan(1)
-	queryOverpass(query, {endpoint: UNREACHABLE})
+	queryOverpass(query, {
+		endpoint: UNREACHABLE,
+		retryOpts: {retries: 0}
+	})
 	.catch(t.ok)
 })
