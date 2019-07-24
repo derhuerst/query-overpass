@@ -1,7 +1,7 @@
 {
 	"name": "@derhuerst/query-overpass",
 	"description": "Query the OpenStreetMap Overpass API.",
-	"version": "1.1.0",
+	"version": "2.0.0",
 	"main": "index.js",
 	"files": [
 		"index.js"
@@ -19,16 +19,16 @@
 	"bugs": "https://github.com/derhuerst/query-overpass/issues",
 	"license": "ISC",
 	"engines": {
-		"node": ">=6"
+		"node": ">=8"
 	},
 	"dependencies": {
 		"fetch-ponyfill": "^6.0.0",
-		"p-retry": "^3.0.0",
+		"p-retry": "^4.1.0",
 		"pinkie-promise": "^2.0.1",
 		"query-string": "^6.0.0"
 	},
 	"devDependencies": {
-		"tap-min": "^1.2.1",
+		"tap-min": "^2.0.0",
 		"tape": "^4.7.0"
 	},
 	"scripts": {
