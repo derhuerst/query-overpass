@@ -65,6 +65,12 @@ queryOverpass(`
 } ]
 ```
 
+To use `@derhuerst/query-overpass` with a custom Overpass API endpoint, use the `endpoint` option:
+
+```js
+queryOverpass(query, {endpoint: 'https://overpass.example.org'})
+```
+
 
 ## Related
 

@@ -5,20 +5,31 @@ const Promise = require('pinkie-promise')
 const {fetch} = require('fetch-ponyfill')({Promise})
 const {stringify} = require('query-string')
 
-const endpoint = 'https://overpass-api.de/api/interpreter'
+const defaults = {
+	endpoint: 'https://overpass-api.de/api/interpreter'
+}
 
-const queryOverpass = (query) => {
+const queryOverpass = (query, opt = {}) => {
+	opt = Object.assign({}, defaults, opt)
+
+	if ('string' !== typeof opt.endpoint) {
+		throw new Error('opt.endpoint must be a string')
+	}
+	const url = opt.endpoint + '?' + stringify({data: query})
+
+	const fetchOpts = {
+		// todo: decide on this
+		// yields isomorphic code, but slower due to preflight request?
+		// mode: 'cors',
+		redirect: 'follow',
+		headers: {
+			accept: 'application/json',
+			'user-agent': 'http://github.com/derhuerst/vbb-osm-relations'
+		}
+	}
+
 	const attempt = () => {
-		return fetch(endpoint + '?' + stringify({data: query}), {
-			// todo: decide on this
-			// yields isomorphic code, but slower due to preflight request?
-			// mode: 'cors',
-			redirect: 'follow',
-			headers: {
-				accept: 'application/json',
-				'user-agent': 'http://github.com/derhuerst/vbb-osm-relations'
-			}
-		})
+		return fetch(url, fetchOpts)
 		.then((res) => {
 			if (!res.ok) {
 				const err = new Error(res.statusText)
