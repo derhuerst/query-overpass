@@ -65,6 +65,12 @@ queryOverpass(`
 } ]
 ```
 
+To use make requests from a web site, enable [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) using the `fetchMode` option:
+
+```js
+queryOverpass(query, {fetchMode: 'cors'})
+```
+
 To use `@derhuerst/query-overpass` with a custom Overpass API endpoint, use the `endpoint` option:
 
 ```js

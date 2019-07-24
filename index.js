@@ -6,6 +6,7 @@ const {fetch} = require('fetch-ponyfill')({Promise})
 const {stringify} = require('query-string')
 
 const defaults = {
+	fetchMode: null,
 	endpoint: 'https://overpass-api.de/api/interpreter'
 }
 
@@ -16,17 +17,14 @@ const queryOverpass = (query, opt = {}) => {
 		throw new Error('opt.endpoint must be a string')
 	}
 	const url = opt.endpoint + '?' + stringify({data: query})
-
 	const fetchOpts = {
-		// todo: decide on this
-		// yields isomorphic code, but slower due to preflight request?
-		// mode: 'cors',
 		redirect: 'follow',
 		headers: {
 			accept: 'application/json',
 			'user-agent': 'http://github.com/derhuerst/vbb-osm-relations'
 		}
 	}
+	if (opt.fetchMode !== null) fetchOpts.mode = opt.fetchMode
 
 	const attempt = () => {
 		return fetch(url, fetchOpts)
