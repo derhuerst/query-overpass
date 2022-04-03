@@ -33,13 +33,25 @@ const queryOverpass = (query, opt = {}) => {
 			if (!res.ok) {
 				const err = new Error(res.statusText)
 				err.statusCode = res.status
-				throw err
+				err.reponseBody = null
+				if (!res.headers.has('content-length') || parseInt(res.headers.get('content-length')) > 1024) {
+					throw err
+				}
+				return res.text()
+				.then((body) => {
+					err.reponseBody = body
+					throw err
+				}, () => {
+					throw err
+				})
 			}
 			return res.json()
 		})
 		.then((data) => {
 			if (!data || !Array.isArray(data.elements)) {
-				throw new Error('invalid response')
+				const err = new Error('invalid response')
+				err.responseBody = data
+				throw err
 			}
 			return data.elements
 		})
