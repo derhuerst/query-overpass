@@ -12,7 +12,6 @@ Other alternatives for you to evaluate:
 - [`idris-overpass`](https://github.com/idris-maps/idris-overpass) and [`idris-overpass-browser`](https://github.com/idris-maps/idris-overpass-browser)
 
 [![npm version](https://img.shields.io/npm/v/@derhuerst/query-overpass.svg)](https://www.npmjs.com/package/@derhuerst/query-overpass)
-[![build status](https://img.shields.io/travis/derhuerst/query-overpass.svg)](https://travis-ci.org/derhuerst/query-overpass)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/query-overpass.svg)
 [![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
 [![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
