@@ -13,8 +13,8 @@ Other alternatives for you to evaluate:
 
 [![npm version](https://img.shields.io/npm/v/@derhuerst/query-overpass.svg)](https://www.npmjs.com/package/@derhuerst/query-overpass)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/query-overpass.svg)
-[![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
-[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
+[![support me via GitHub Sponsors](https://img.shields.io/badge/support%20me-donate-fa7664.svg)](https://github.com/sponsors/derhuerst)
+[![chat with me on Twitter](https://img.shields.io/badge/chat%20with%20me-on%20Twitter-1da1f2.svg)](https://twitter.com/derhuerst)
 
 
 ## Installing
@@ -63,6 +63,8 @@ queryOverpass(`
 	}
 } ]
 ```
+
+*Note:* The Overpass API *does not* support [extended Overpass Turbo queries](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Extended_Overpass_Turbo_Queries), as they are an [Overpass Turbo](https://overpass-turbo.eu)-specific feature.
 
 To use make requests from a web site, enable [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) using the `fetchMode` option:
 

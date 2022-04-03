@@ -48,7 +48,7 @@ const queryOverpass = (query, opt = {}) => {
 			return res.json()
 		})
 		.then((data) => {
-			if (!data || !Array.isArray(data.elements)) {
+			if (!data || !Array.isArray(data.elements)) {
 				const err = new Error('invalid response')
 				err.responseBody = data
 				throw err
@@ -57,7 +57,8 @@ const queryOverpass = (query, opt = {}) => {
 		})
 	}
 
-	return retry(attempt, opt.retryOpts)
+	const retryOpts = Object.assign({}, defaults.retryOpts, opt.retryOpts || {})
+	return retry(attempt, retryOpts)
 }
 
 module.exports = queryOverpass
